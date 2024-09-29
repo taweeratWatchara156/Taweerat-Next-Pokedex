@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Loading from "./components/Loading";
+import Loading from "../components/Loading";
 
 export default function Home() {
   const route = useRouter();
@@ -12,7 +12,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="flex w-screen h-screen justify-center items-center overflow-x-hidden">
+    <div className="flex w-screen h-screen justify-center items-cente">
       <Loading/>
     </div>
   );
