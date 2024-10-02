@@ -241,8 +241,8 @@ function Page({ params }: { params: any }) {
       {/* ---------------------------------------------------------------- */}
       <div className='flex  justify-between mb-2'>
         {/* Back Button */}
-        <div className='bg-red-500 hover:bg-red-400 rounded-lg md:text-lg text-sm md:p-3 p-2 font-bold text-white duration-100 cursor-pointer hover:scale-105 active:scale-100' onClick={() => router.push(`../pokemon/${previousPokemon.name.toLowerCase()}`)}>
-          <FontAwesomeIcon icon={faCaretLeft} /> &nbsp;{previousPokemon?.id ? formatNumber(previousPokemon.id.toString().toUpperCase()) : ""} &nbsp;{previousPokemon?.name ? capitalizeString(previousPokemon.name) : ''}
+        <div className='bg-red-500 hover:bg-red-400 rounded-lg md:text-lg text-sm md:p-3 p-2 font-bold text-white duration-100 cursor-pointer hover:scale-105 active:scale-100' onClick={() => router.push(`${previousPokemon?.name ? `../pokemon/${previousPokemon?.name}` : '../generation'}`)}>
+          <FontAwesomeIcon icon={faCaretLeft} /> &nbsp;{previousPokemon?.id ? formatNumber(previousPokemon.id.toString().toUpperCase()) : ""} {previousPokemon?.name ? capitalizeString(previousPokemon.name) : 'Home'}
         </div>
         {nextPokemon?.name ? (
           <div className='bg-red-500 hover:bg-red-400 rounded-lg md:text-lg text-sm md:p-3 p-2 font-bold text-white duration-100 cursor-pointer hover:scale-105 active:scale-100' onClick={() => router.push(`../pokemon/${nextPokemon.name.toLowerCase()}`)}>
@@ -345,7 +345,7 @@ function Page({ params }: { params: any }) {
               <div className='w-full h-2 bg-gray-300 rounded-full relative mt-1'>
                 <div className='absolute h-full bg-gray-500 rounded-full' style={{ width: `${(pagePokemon.stats[0].base_stat / maxStats.hp) * 100}%` }} />
               </div>
-            </div>
+            </div>s
 
             {/* Attack */}
             <div className='flex flex-col  md:text-lg text-base mt-3'>
